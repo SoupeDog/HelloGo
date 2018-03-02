@@ -27,5 +27,15 @@ func P_声明变量() {
 	fmt.Println("写法2：" + strconv.Itoa(index1))
 	fmt.Println("写法3：" + strconv.Itoa(index2) + "  " + strconv.Itoa(index3))
 	fmt.Println("写法3：" + strconv.Itoa(constVar1) + "  " + strconv.Itoa(constVar2) + "  " + strconv.Itoa(constVar3))
+}
 
+func P_多返回值() (int, string) {
+	return 1, "第二个返回值"
+}
+
+func P_多返回值接收(第一个参数 int,第二个参数 string)  {
+	fmt.Print("第一个:")
+	fmt.Println(第一个参数)
+	fmt.Print("第二个:")
+	fmt.Println(第二个参数)
 }

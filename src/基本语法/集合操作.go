@@ -21,17 +21,19 @@ func P_集合操作() {
 		}
 	}
 
-	// 2. 定长数组操作           plan B     array := []string{"a", "b", "c"}
-	var array [3]string
+	// 2. 定长数组操作           plan B     array := [10]string{0:"a", 2:"b", 3:"c"}   下标0 2 3 特定值其余默认值
+	array := [3]string{}
 	for i := 0; i < 3; i++ {
 		array[i] = strconv.Itoa(i)
 	}
 	fmt.Println(array)
 
+
 	// 3. 切片
 	slice := array[0:1] // 切取 array index 0~1 包括0 不包括1
+
 	for i, item := range slice {
-		fmt.Printf("slice[%d]=%s\n", i, item)
+		fmt.Printf("slice[%d]=%s\n", i, item) // Fomat 没有 printfln ？
 	}
 
 	// 4 list 链表操作
