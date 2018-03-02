@@ -53,7 +53,7 @@ func P_局部变量覆盖全局变量() {
 
 func P_Return前完成一些事情(整数 int) string {
 	defer 一些特定业务逻辑() // return 前，最后一步会执行
-	switch 整数 <= 0 {
+	switch 整数 <= 0 { // go 的 switch 默认每个case 会 break，需要添加 fallthrough 才可一次判断触发多 case
 	case true:
 		return "小于等于0"
 	case false:
@@ -61,6 +61,14 @@ func P_Return前完成一些事情(整数 int) string {
 	default:
 		return "玄学分支"
 	}
+}
+
+func P_函数做参数(入参 int, 函数 func(int) int) {//func(int) int 含义是 一个 int 为入参 返回值为 int 的函数
+	fmt.Printf("%d 的平方为: %d",入参,函数(入参))
+}
+
+func P_计算平方(target int) int {
+	return target * target
 }
 
 func 一些特定业务逻辑() {
