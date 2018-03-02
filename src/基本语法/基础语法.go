@@ -5,6 +5,8 @@ import (
 	"strconv"
 )
 
+var 全局变量 = 10
+
 //P_的事情很无奈,Go 里面 "public" 方法得字母开头大写 后不赘述
 func P_声明变量() {
 	//1. 写法1
@@ -33,9 +35,18 @@ func P_多返回值() (int, string) {
 	return 1, "第二个返回值"
 }
 
-func P_多返回值接收(第一个参数 int,第二个参数 string)  {
+func P_多返回值接收(第一个参数 int, 第二个参数 string) {
 	fmt.Print("第一个:")
 	fmt.Println(第一个参数)
 	fmt.Print("第二个:")
 	fmt.Println(第二个参数)
+}
+
+func P_打印全局变量() {
+	fmt.Println(全局变量)
+}
+
+func P_局部变量覆盖全局变量() {
+	全局变量 := 5
+	fmt.Println(全局变量)
 }
