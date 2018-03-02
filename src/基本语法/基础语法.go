@@ -50,3 +50,19 @@ func P_局部变量覆盖全局变量() {
 	全局变量 := 5
 	fmt.Println(全局变量)
 }
+
+func P_Return前完成一些事情(整数 int) string {
+	defer 一些特定业务逻辑() // return 前，最后一步会执行
+	switch 整数 <= 0 {
+	case true:
+		return "小于等于0"
+	case false:
+		return "大于0"
+	default:
+		return "玄学分支"
+	}
+}
+
+func 一些特定业务逻辑() {
+	fmt.Println("某些特定的业务逻辑……")
+}
